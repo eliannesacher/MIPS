@@ -1,4 +1,4 @@
-# MIPS
+# Lab 5
 
 ## Assignment
 

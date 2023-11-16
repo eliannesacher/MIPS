@@ -1,0 +1,12 @@
+Testing:
+Our testing method consisted of the following:
+1) Testbenches for individual modules.
+2) Testing with the CPU testbench given at different stages of completion with different assembly instructions.
+3) Using the FPGA.
+
+Explanations:
+1) In the first part of this lab, we built a testbench to check the FSM and see that the logic is correct. This way we could see exactly how it goes through the states and assess if our connections were off. Note: it worked initially, but since we made plenty of changes along the way it won't work now (upon completion of the entire lab).
+This method was not used for the second part of the lab since in the first part it was proven to be inefficient as it took us more time to write and debug the testbench itself. Instead, we used the waveform and dragged the relevant variables to see if it transitions between the states correctly.
+2) Throughout both parts of the labs, we realized an instrumentalist approach would work best. Every step of the way, we implemented similar type instructions and tested all of them individually. Once a certain type worked, we moved to adding the relevant controls/states for the other instruction types and then added the relevant connections to our CPU according to our Datapath.
+In the first part of the lab, we first implemented the simpler R-type instructions (basic ALU instructions) and after extensively testing we moved to adding the shift instructions. In the second part of the lab, we first implemented the I-type instructions. Within the I-type instructions, we first implemented the sw and lw instructions, then the ALU based instructions (addi, ori, slti, etc.), and finally beq and bne. The last parts we implemented were the jumps in the following order: j, jal, and jr. Again, we checked every one of the instructions multiple times and separately, making sure that they all worked perfectly before we moved on to implementing the next part. Once it all worked, we put it all together and wrote an assembly code that uses all of the instructions necessary for the completion of the lab at once (see the submitted assembly code file [“test.asm”] for the exact code used).
+3) After the waveform showed that the code worked correctly, we synthesized our code, uploaded it to the FPGA, and saw that it worked in practice. This was the perfect way for us to easily see the functionality of our code.
